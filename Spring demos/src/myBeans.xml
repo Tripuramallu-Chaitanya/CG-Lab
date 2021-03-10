@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<bean id="hello" class="com.HelloWorld"/>
+	<!-- <context:property-placeholder location="classpath.MyProperty.properties"/> -->
+	<bean id="emp" class="com.Employee" init-method="initialize" destroy-method="destroy">
+	<!-- <property name="address" ref="add"/> -->
+	<property name="name" value="Chaitu"></property>
+	<property name="empid" value="101"></property>
+	<property name="phone">
+		<list>
+			<value>9874586259</value>
+			<value>9875846589</value>
+			<value>5487866259</value>
+			<value>2587413695</value>
+		</list>
+	</property>
+	<!-- <constructor-arg name="empid" value="111"/>
+	<constructor-arg name="name" value="Chaitu"/>
+	<constructor-arg name="address" ref="add"/> -->
+	</bean>
+	<bean id ="add" class="com.Address">
+		<property name="country" value="India"></property>
+		<property name="city" value="Chennai"></property>
+		<property name="zip" value="533262"></property>
+	</bean>
+	<bean id ="add1" class="com.Address">
+		<property name="country" value="USA"></property>
+		<property name="city" value="NewYork"></property>
+		<property name="zip" value="798526"></property>
+	</bean>
+	<context:annotation-config/>
+	
+</beans>
